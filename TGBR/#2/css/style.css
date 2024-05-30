@@ -1,0 +1,24 @@
+.hint
+{
+background-color:#0B2B3A;
+line-height:10px;
+color:#A9BECA;
+font-family:verdana;
+font-size:11px;
+width:auto;
+border-top:1px solid #00D2FF;
+border-right:1px solid #00D2FF;
+border-bottom:1px solid #00D2FF;
+border-left:5px solid #00D2FF;
+margin:0px;
+padding:8px;
+position:absolute;
+visibility:hidden;
+}
+A:link {COLOR: #0B2B3A; TEXT-DECORATION: none}
+A:visited {COLOR: #0B2B3A; TEXT-DECORATION: none}
+A:active {COLOR: #0B2B3A; TEXT-DECORATION: none}
+A:hover {COLOR: #0B2B3A; TEXT-DECORATION: line-through}
+BODY { background-color: #0B2B3A;
+	   color: #000000;
+	   }

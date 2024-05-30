@@ -1,0 +1,143 @@
+<html>
+<head>
+<title>==||The Gray Brotherhood Community||==||E-ZineS #2||==</title>
+<META http-equiv=Content-Type content="text/php; charset=windows-1251">
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="css/bord.css" type="text/css">
+<link rel="shortcut icon" href="1.zzd">
+</head>
+<script type="text/javascript" src="css/mw_hint.zzd"></script>
+<body>
+<table border="0" width="900" align="center" valign="top">
+<tr>
+<td border="0" width="100%" align="center" valign="top">
+<IMG SRC="css/images/head.jpg"  border="0" alt="The Gray Brotherhood Community">
+</td>
+</tr><tr><td align="center" >
+</td></tr>
+</table>
+
+
+            <TABLE cellSpacing=0 cellPadding=0 width="749" border='0' align="center">
+              <TBODY>
+              <TR>
+                <TD><IMG height=30 alt="" src="css/images/cat_left.gif" width=40></TD>
+                <TD width=20 background="css/images/1.jpg" height=20><center>
+		</center></TD>
+                <TD><IMG height=30 alt="" src="css/images/cat_right.gif" width=40></TD></TR>
+              <TR>
+                <TD width=2 background="css/images/3.jpg" height=2></TD>
+                <TD bgColor=#A9BECA>
+                      <CENTER>
+<br><b><a href='index.html' title='Содержание'>Содержание</a></b>
+</CENTER>
+<br>
+<b>DreamSystem 2.0</b><br><br>
+Сей продукт является продолжением серии DreamSocks, небольшой обзорчик которого был
+ранее. В Дримсистем помимо носков предоставляется также ддос и биндшелл.
+<br><br>
+  1. Основной ехе<br><br>
+
+  Основной ехе размером в 21 кб неупакованный, внутри все такие же приемы как и в
+дримсокс, а именно вызовы функций сделаны в виде call, push\jmp, push\ret инструкций.
+Строки пошифрованы, расшифровываются практически все сразу недалеко от точки входа,
+затем идет подгрузка нужных дллок и восстановление импорта.<br>
+  После предварительных процедур троян устанавливает себя в системную папку с именем
+cssrss.exe и прописывается в Run ветку реестра. Затем извлекает драйвер, который по
+существу является убивателем фаерволлов и руткитом, с именем nso12k.sys, прописывает
+его в реестре и вызывает ZwLoadDriver.<br>
+  Затем троян запускает у себя носки, и стучит в стату. Соответственно при получении
+комманды на ддос его запускает.<br><br>
+
+  2. Драйвер<br><br>
+
+  Драйвер размером в 3.5 кб в себе держит различные обходы фаерволлов и небольшой руткит.
+  Обход фаероволлов идет путем их отключения. Для начала сбрасываются Attached 
+девайсы с \Device\Tcpip, после чего идет регистрация протокола ndis, и проход по
+списку всех зарегестрированных протоколов в системе с целью снятия хуков. Посмотрев
+на код снятия хуков видим примерно такой кусочек кода:<br><br>
+
+.text:00010611                 cmp     dword ptr [edx], 3C08358h<br>
+.text:00010617                 jnz     short loc_1061F<br>
+.text:00010619                 push    dword ptr [ecx+8]<br>
+.text:0001061C                 pop     edx<br>
+.text:0001061D                 jmp     short loc_1062F<br>
+.text:0001061F<br>
+.text:0001061F loc_1061F:                              ; CODE XREF: RemoveOutpostHook+1D<br>
+.text:0001061F                 cmp     dword ptr [edx], 6030FF58h<br>
+.text:00010625                 jnz     short loc_1062D<br>
+.text:00010627                 push    dword ptr [ecx+5]<br>
+.text:0001062A                 pop     edx<br>
+.text:0001062B                 jmp     short loc_1062F
+<br><br>
+  Смотря на 3C08358h видим код pop eax \\ add eax, 3, что является кодом обработчика
+4го аутпоста, смотря на 6030FF58h видим код pop eax \\ push [eax] \\ pushad видим код
+обработчика 3го аутпоста, а смотря еще лучше вспоминаем статью MaD опубликованную на
+wasm.ru и называлась та статья "Обход Outpost Firewall 3.x и 4.0 в Kernel mode". В той
+статье как раз и был разбор обхода на уровне ндис. Сравнивая код из статьи и код из
+драйвера нетрудно догадатся что они идентичны. Кроме того код целиком взят из той статьи,
+ибо снятие аттаченных девайсов и сброс виндового фаера идетичны.<br>
+  Снятие виндового фаера, а также части аутпоста идет через посылку \Device\IPFILTERDRIVER
+запроса IOCTL_PF_SET_EXTENSION_POINTER, который убирает обработчики и фаерволл больше
+ничего не видит.<br>
+  Руткит прячет процесс трояна и его фаил, при этом совершенно не пряча себя самого, т.е.
+драйвер nso12k.sys так и лежит в открытом виде. Руткит реализован в виде перехвата SSDT и
+соответственно модификации выводимых данных при их вызове. Перехвачены 3 функции, это:
+ZwQueryDirectoryFile, ZwQuerySystemInformation и ZwTerminateProcess. Нужны они
+соответственно для сокрытия файлов, процессов и для управления руткитом. Для передачи
+руткиту пида скрываемого процесса троян вызывает TerminateProcess с пидом 313373, для
+передачи имени скрываемого файла 313374. И существует еще один спец пид - 313375 он
+содержит в себе установку хуков на реестр, но в моем варианте его не вызывают и
+соответственно троян продолжает светится в Run ветке реестра.<br>
+  Руткит естественно обнаруживается практически любым антируткитом.<br><br>
+
+  Итого, продукт представляет собой продолжение дримсокса, используются теже самые методы
+что и до этого, не работает скрытие ветки реестра, да и само скрытие обнаруживается
+вполне легко, файлы с постоянным именам также огорчают.<br><br>
+												<b>Only for TGBR E-ZineS, by Neon, TGBR.IN
+                                                                         date: 29.03.08</b>
+<br>
+<br><center>
+<b><a href='index.html' title='Содержание'>Содержание</a></b><br></center>
+<br>
+</TD>
+                <TD width=40 background="css/images/_3.jpg" height=30></TD></TR>
+              <TR>
+                <TD><IMG height=30 src="css/images/cat_left2.gif" width=40></TD>
+                <TD width=30 background="css/images/_1.jpg" height=30></TD>
+                <TD><IMG height=30 alt="" src="css/images/cat_right2.gif"  width=40></TD>
+				</TR></TBODY>
+				</TABLE>
+		<table align="center" cellpadding="0" cellspacing="0">
+    <tr>
+        <td width="749">
+         <br>	
+		
+		<center>
+		<br><br>
+<!--Rating@Mail.ru COUNTEr--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<a href="http://top.mail.ru/jump?from=1212823"'+
+' target=_top><img src="http://d1.c8.b2.a1.top.list.ru/counter'+
+'?id=1212823;t=135;js='+js+a+';rand='+Math.random()+
+'" alt="Рейтинг@Mail.ru"'+' border=0 height=40 width=88/><\/a>')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><a
+target=_top href="http://top.mail.ru/jump?from=1212823"><FONT size="1">[AD]</FONT><AD- p.list.ru/counter?js=na;id=1212823;t=135"
+border=0 height=40 width=88
+alt="Рейтинг@Mail.ru"/></a></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER-->
+</center>
+        </td>
+    </tr>
+</table>
+
+
+</body>
+</html>
