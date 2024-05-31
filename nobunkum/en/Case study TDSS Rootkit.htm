@@ -1,0 +1,437 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en"><head><script type="text/javascript" async="" src="Case%20study%20TDSS%20Rootkit_files/ga.js"></script><script src="Case%20study%20TDSS%20Rootkit_files/analytics.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app219.us.archive.org';v.server_ms=270;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="Case%20study%20TDSS%20Rootkit_files/bundle-playback.js" charset="utf-8"></script>
+<script type="text/javascript" src="Case%20study%20TDSS%20Rootkit_files/wombat.js" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="Case%20study%20TDSS%20Rootkit_files/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.pc(0.001);
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://nobunkum.ru:80/analytics/en-tdss-analysis","20180130222133","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1517350893");
+</script>
+<link rel="stylesheet" type="text/css" href="Case%20study%20TDSS%20Rootkit_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="Case%20study%20TDSS%20Rootkit_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Case study: TDSS Rootkit</title>
+  <!-- base href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/" -->
+  <link rel="alternate" type="application/rss+xml" title="Журнал NO BUNKUM — Новости" href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/rss">
+  <link rel="stylesheet" type="text/css" href="Case%20study%20TDSS%20Rootkit_files/style.css">
+<!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css" href="/template/css/ie.css" />
+<![endif]-->
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="/template/css/ie6.css" />
+<![endif]-->
+</head>
+<body><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr;">
+</div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20180130222133/http://nobunkum.ru:80/analytics/en-tdss-analysis</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(725,27,25,2,"web","http://nobunkum.ru/analytics/en-tdss-analysis","20180130222133",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=S1zqJCYt","https://web-static.archive.org/_static/css/iconochive.css?v=qtvMKcIJ"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+      <div class="subscribe">
+        
+<form action="/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis" method="post">
+<div>
+<input class="mail" type="text" name="email" placeholder="newsletter">
+<input type="hidden" name="groups[]" value="1">
+<input class="submit" type="submit" value="OK"></div>
+</form>
+      </div>
+  <div id="header">
+    <div id="title">
+      <a id="logo" href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/"><img src="Case%20study%20TDSS%20Rootkit_files/logo.jpg" width="374" height="51" alt="NO BUNKUM"></a>
+      <p>...on guns, germs, and steel of the digital age</p>
+    </div>
+    <div id="subtitle">
+      <ul><li class="first"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/lookout/" title="Lookout" class="issue">Lookout</a></li>
+<li class="current"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/" title="Analytics" class="issue">Analytics</a></li>
+<li><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/ru/" title="NO BUNKUM" class="issue">NO BUNKUM</a></li>
+<li class="last"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/demo/" title="Demo" class="issue">Demo</a></li>
+</ul>
+      <div class="headerlinks">
+        <a id="headerlink-about" href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/about" title="О журнале"><span>?</span></a>
+        <a id="headerlink-rss" href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/rss" title="RSS"><span>RSS</span></a>
+      </div>
+    </div>
+  </div>
+  <div id="content">
+    <div class="aside-long" style="text-align:center;padding:15px 10px">
+      <span class="tl-tag tl-tag-weight1"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=Exploit.SWF.Agent.br">Exploit.SWF.Agent.br</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight1"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=Pdfka.asd">Pdfka.asd</a></span>
+<span class="tl-tag tl-tag-weight1"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=Pidief.cvl">Pidief.cvl</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight2"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=TDSS">TDSS</a></span>
+<span class="tl-tag tl-tag-weight1"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=TDSS+removal">TDSS removal</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight1"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=binary+planting">binary planting</a></span>
+<span class="tl-tag tl-tag-weight1"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=bios+infection">bios infection</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight1"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=blind+sqli">blind sqli</a></span>
+<span class="tl-tag tl-tag-weight1"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=bootkit">bootkit</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight1"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=bootkit+remover">bootkit remover</a></span>
+<span class="tl-tag tl-tag-weight1"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=browser+exploitation">browser exploitation</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight1"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=com+hijacking">com hijacking</a></span>
+<span class="tl-tag tl-tag-weight4"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=disassembling">disassembling</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight1"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=dll+hijacking">dll hijacking</a></span>
+<span class="tl-tag tl-tag-weight2"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=drive-by+downloads">drive-by downloads</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight1"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=hack+online+banks">hack online banks</a></span>
+<span class="tl-tag tl-tag-weight1"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=heap-spray">heap-spray</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight1"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=hijack+botnet">hijack botnet</a></span>
+<span class="tl-tag tl-tag-weight1"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=ibank">ibank</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight1"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=kernel+protection">kernel protection</a></span>
+<span class="tl-tag tl-tag-weight1"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=kernel-mode+rootkit">kernel-mode rootkit</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight1"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=keylogger">keylogger</a></span>
+<span class="tl-tag tl-tag-weight5"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=malware+analysis">malware analysis</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight2"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=rootkit+detection">rootkit detection</a></span>
+<span class="tl-tag tl-tag-weight3"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=trojan">trojan</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight1"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/tags?tag=virus+removal">virus removal</a></span>
+    </div>
+    <div style="margin-top: -10px;"><!-- http://nobunkum.ru/tdss-analysis/index.html -->
+<h1 id="content_title">Case study: TDSS Rootkit</h1>
+<div id="article_author" class="author">Alisa Esage</div>
+<div class="author"><a href="https://web.archive.org/web/20180130222133/http://twitter.com/alisaesage" target="_blank">@alisaesage</a></div>
+<ul class="toc"><!--<ul class="toc">-->
+<li><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#intro">Introduction</a></li>
+<li><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#overview">Family overview</a></li>
+<li><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#features">Family traits</a></li>
+<li><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#diversity">Family divergence &amp; recent updates</a></li>
+<li><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#analysis">Sample analysis</a></li>
+<ul class="toc">
+<li><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#install">Trojan installation &amp; protection bypassing</a></li>
+<li><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#driver">The driver</a></li>
+<li><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#rootkit">Rootkit functionality</a></li>
+<li><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#portal">Ring0 communication gateway</a></li>
+<li><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#persistence">Persistent functionality</a></li>
+<li><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#anti-av">Blocking security solutions</a></li>
+</ul>
+<!--<ul class="toc">-->
+<li><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#removal">Manual disinfection</a></li>
+<li><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#resume">Conclusions</a></li>
+<li><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#reference">References</a></li>
+</ul>
+<div class="aside">
+<h4>The article is also available in <a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/ru/tdss-analysis">Russian</a></h4>
+</div>
+<h2 id="intro">Introduction</h2>
+<p>This is a case study for the TDSS malware, also known as Tidserv, 
+TDSServ and Alureon. Some of the mal-named detections for components 
+include Trojan.Win32.DNSChanger and Trojan.FakeAlert.</p>
+<p>Here are some reasons why I decided to conduct a deep study of this malware.</p>
+<ol>
+<li>TDSS seems to be very problematic to disinfect for modern antivirus solutions. <br> Searching the internet by the malware name<a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#reference">[1]</a>
+ will give you a considerable list of “Help me!” kind of forum posts 
+from users whose antivirus solutions succeeded to detect the malware, 
+but failed to remove it.</li>
+<li>At the same time, there is no public detailed description of this malware provided by vendor security response.</li>
+<li>A regular malware posing problems to defense is an alarm. <br> TDSS is not a rocket science! Being quite advanced, it still does not engage any outstanding, new generation techniques.</li>
+<li>TDSS is actively spreading in-the-wild, developing into a wide and mighty botnet. <br> According to Kaspersky Lab<a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#reference">[2]</a>, they are adding 100 to 300 signature detections per day for new/modified components.</li>
+</ol>
+<p>Thus, TDSS is kind of a borderline case of threat. Advanced enough to
+ turn an AV into a helpless crier or defeat it completely, but not 
+looking critical enough to trigger a detailed study. Widespread enough 
+to provoke numerous user issues, but not outrageous enough to trigger an
+ epidemic alert.</p>
+<h2 id="overview">Family overview</h2>
+<p>TDSS is known for its durable capability to bypass active 
+protection/HIPS, outstanding persistence and rootkit functions. Users 
+with all kinds of AV solutions report problems disinfecting the system. 
+Observable activity typically includes website redirects, ad popups and 
+AV updating/loading problems. The functionality may vary widely though, 
+since TDSS is designed as a modular unit and may easily download and 
+install components providing extra features.</p>
+<p>First reports of TDSS infection date back to mid-2008. Even at that 
+time the malware exposed extraordinary persistence causing public user 
+issues, and capabilities for bypassing antivirus protection. Given that 
+the malware owners manage to keep this advanced functionality up-to-date
+ for almost a year now, and also given its obviously skilful code 
+architecture and implementation, we can assume that TDSS is being 
+developed through a clear vision, under a steady plan and by a team of 
+proficient engineers.</p>
+<p>TDSS by itself is actually but a very advanced modular downloader. 
+Its main goal is to persist into a system and then to provide a means 
+for remote control (via a downloaded configuration file) and a framework
+ for downloading/installing extra functionality modules.</p>
+<p>TDSS is delivered to a user PC through a wide and elaborate 
+distribution network. Known attack vectors include website iframe 
+attacks <a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#reference">[3]</a> <a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#reference">[4]</a> and bundling malware with pseudo-legitimate video codecs<a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#reference">[5]</a>, warezly distributed legitimate software and cracks<a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#reference">[6]</a>.</p>
+<h2 id="features">Family traits</h2>
+<ul>
+<li>TDSS original name is ‘TDL’. Most recent samples call themselves ‘TDL2’.</li>
+<li>The trojan files are protected from binary analysis. Code obfuscation and encrypting are used.</li>
+<li>Some files contain a fake Microsoft version stamp.</li>
+<li>TDSS installs through allowing msiexec.exe (Microsoft Installer) service to load a legitimate, but maliciously patched DLL. <a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#reference">[7]</a></li>
+<li>After installation, the trojan effectively prevents antivirus software from launching or updating their bases.</li>
+<li>The trojan is persistent through a variety of techniques. As an 
+example, some of the family members survive Safe Boot, which is done via
+ registering the trojan’s driver in the 
+HKLM\SYSTEM\ControlSet001\Control\SafeBoot\Minimal and 
+HKLM\SYSTEM\ControlSet001\Control\SafeBoot\Network registry keys.</li>
+<li>The trojan creates a (hidden) registry key to store its 
+configuration information, such as AV modules to be denied of Internet 
+access, and malicious modules to be injected into browsers.</li>
+<li>The trojan hides its files and registry values by means of quite a few system hooks.</li>
+<li>The trojan uses a hooked function ZwFlushInstructionCache as a communication gateway to its own kernel driver.</li>
+</ul>
+<h2 id="diversity">Family divergence &amp; recent updates</h2>
+<h3 id="names">Names</h3>
+<p>Back to 2008, a TDSS specimen presence in a box used to be marked by a
+ driver named TDSSserv.sys, after which the malware actually got its 
+name. Since then, malware-related file names changed several times, and 
+included clbdriver.sys, seneka*.sys, UACd*.sys, gaopdx*.sys, tdlserv.sys
+ and others.</p>
+<p>Another naming change consists in that recent samples patch msi.dll 
+for their installation, while the first samples used to patch 
+advapi32.dll. Probably it’s a reaction to the newly added behavioral 
+heuristics in protection solutions.</p>
+<h3 id="code-protection">Code protection</h3>
+<p>In the most recent samples the code protection is designed in a way 
+that makes the trojan look like a regular system file or a device 
+supporting utility. The unpacker stub is a big piece of regular code, 
+which means there is no extra entropy throughout the file’s byte array, 
+the latter being a sign of a packed file visible to a human eye. 
+Furthermore, the code is enriched by random pseudo-legitimate ASCII 
+strings and random API calls to fool a hasty analyst into thinking it's a
+ legitimate code.</p>
+<p>The code protection itself is trivial, being but an easily removing envelope with normal code inside.</p>
+<h3 id="distribution">Distribution</h3>
+<p>Most recent samples contain worm functionality. The malware tries to 
+distribute to removable drives by copying its own body into all 
+available drives as a hidden *.com file in the hidden RECYCLER 
+directory, and creating a file autorun.inf with the file reference on 
+the same drive.</p>
+<h3 id="network-activity">Network activity</h3>
+<p>Most recent TDSS samples change system’s DNS addresses, thus making 
+all the hostname requests to filter through a malicious service. It’s a 
+brilliant solution, probably inspired by the much-talked-of DNS root 
+server vulnerability and the Evilgrade PoC[13]. Distributing a spoofed 
+DNS provider throughout the network by means of a DHCP service gives an 
+attacker control of a whole network’s web traffic, up to delivering 
+malware to clean machines under the guise of a legitimate software 
+update.</p>
+<h2 id="analysis">Sample analysis</h2>
+<p>For analysis, I took a fairly recent sample, dating March/April 2009 
+(MD5: 1DE66FC07C7B5893F5F83B397AC38F3D). It is a specimen of the TDSS 
+variety quoted by Symantec/Russia as one of the most notable as of 
+end-March <a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#reference">[11]</a>.</p>
+<p>General execution flow of an average TDSS specimen has already been exposed<a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#reference">[8]</a><a id="#reference">[9]</a>, as well as its basic mechanisms in userland<a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#reference">[4]</a>. Summary of high-level functions for my particular sample is available from any public sandbox<a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/analytics/en-tdss-analysis#reference">[12]</a>. So, I will be focusing on the trojan’s most important features and driver functionality.</p>
+<h3 id="install">Trojan installation &amp; protection bypassing</h3>
+<p>Notable is the trojan’s initial installation routine, since it allows
+ to bypass behavioral protection/firewall. The idea is to force a 
+legitimate service to load a legitimate, but maliciously patched DLL. 
+This is done by modification of the msi.dll file in \knowndlls 
+directory, followed by a regular launch of the “Microsoft Installer” 
+service.</p>
+<pre>NtCreateSection(..”\knowndlls\dll.dll”..) // new section for a malicious dll
+CopyFile(..”msi.dll”, ..) // preparing the dll to patch
+WriteFile(.., ..) // patching
+
+The injected code will call LoadLibrary, which will invoke the malicious dll mapped into the \knowndlls\dll.dll section. Shellcode is quite elegant:
+
+push	7c906cbc ; pointer to “dll.dll” – really it’s a calculated pointer to the last part of the “ntdll.dll” name in the regularly mapped ntdll.dll
+call $+5 ; call next instruction so that its address was on the stack
+sub dword ptr [esp], 0a ; now the first dword on stack points to the first shellcode instruction, meaning that LoadLibrary will return there. Shellcode will be replaced by original code by then.
+mov eax, LoadLibrary
+jmp eax ; call LoadLibrary (“dll.dll”)
+
+After the infected dll is prepared, the \knowndlls\msi.dll section is recreated to point to an infected dll, and the msiexec.exe service is started to force loading of the now infected library.
+
+NtOpenSection(..”\knowndlls\msi.dll”..)
+NtMakeTemporaryObject(..) // clear the OBJ_PERMANENT flag from section
+CloseHandle(..)
+NtCreateSection(..”\knowndlls\msi.dll”, .. ..) //re-create the msi.dll section, now pointing to the infected msi.dll library in 
+..
+StartService (..”Windows Installer”..)</pre>
+<p>The main idea of this technique is that, being executed in the 
+context of the Windows Installer, the malicious code has all the 
+privileges to download and install anything. So it downloads and 
+installs a fresh build of TDSS kernel component. Another idea of the 
+technique is that it does not provide an obviously malicious behavior, 
+so a HIPS will fail here until it ‘learns’ this particular trick.</p>
+<p>The dll.dll functionality itself is quite simple, as seen from the flowchart (fig.1).</p>
+<div class="figure"><a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/images/tdss-analysis/fig1.gif"><img src="Case%20study%20TDSS%20Rootkit_files/fig1.gif" alt="Fig.1. IDA-generated flowchart of the dll.dll." width="500" border="0"></a>
+<p>Fig.1. IDA-generated flowchart of the dll.dll.</p>
+</div>
+<h3 id="driver">The driver</h3>
+<p>TDSS does not have its own userland executable file. All core 
+functions are provided by a driver, which is loaded automatically at 
+startup. High-level functions are provided by additional DLL module(s) 
+injected into processes.</p>
+<p>Core functions provided by the driver include:</p>
+<ul>
+<li>hiding the trojan’s signs</li>
+<li>providing a gateway into the kernel</li>
+<li>shoving spoofed DNS servers to network services</li>
+<li>blocking antiviruses listed in a configuration key from loading</li>
+<li>injecting a DLL into browser executables</li>
+<li>installation of new DLL modules.</li>
+</ul>
+<h3 id="rootkit">Rootkit functionality</h3>
+<p>The Trojan hooks the following functions in kernel:</p>
+<ul>
+<li>IofCallDriver</li>
+<li>IofCompleteReq</li>
+<li>NtFlushInstructionCache</li>
+<li>NtQueryVlaueKey</li>
+<li>NtEnumerateKey.</li>
+</ul>
+<p>The latter 3 hooks are implemented via SDT modification. 
+NtEnumerateKey hook is used to hide all the TDSS registry keys 
+(‘gaopdx*’ in my case), except for trusted processes, listed in the 
+trojan’s configuration key. NtQueryValueKey hook is used to spoof DNS 
+addresses without modifying the registry (and therefore without 
+triggering a HIPS registry alert), via a ‘DhcpNameServer’ and 
+‘NameServer’[14] registry values substitution.</p>
+<p>Hooks to IofCallDriver and IofCompleteRequest are implemented via 
+splicing the kernel code in ntkrnlpa.exe in memory. They are used to 
+hide the trojan’s files and probably network TCP activity.</p>
+<p>Hook to IofCallDriver is used to infiltrate all the IRPs systemwide, 
+which allows the trojan to hide its own files (beginning with the string
+ “gaopdx*” in my case) when it catches an IRP to a file system driver.</p>
+<pre>If ( FsRtlIsNameInExpression (.."*\\gaopdx*" or "*\\TEMP\\gaopdx*"..) )
+Then return (STATUS_TOO_MANY_SECRETS) </pre>
+<p>IofCompleteRequest has a similar functionality.</p>
+<h3 id="portal">Ring0 communication gateway</h3>
+<p>NtFlushInstructionCache hook is slightly more interesting, providing a
+ non-typical communication gateway to the driver. To make use of the 
+gateway, one should call the NtFlushInstructionCache API as follows:</p>
+<pre>push    0		; argument to the command
+push    'VERG'	; 4-byte command, allowing to prove the hook’s in place
+push    'TDL2' ; a magic value which leads execution to the command processor and not to the original API
+call    ds:ZwFlushInstructionCache 
+; this is actually a piece of code from the dll.dll component, checking the presence of the core driver.</pre>
+<p>The scope of available commands is very limited and will not allow to
+ take control over the driver (in contrast to some security drivers). 
+Available commands include passing trojan-related variables from kernel 
+to userland, inserting a termination job (via kernel APC) into a given 
+process or thread, and maintaining installation of new DLL modules.</p>
+<h3 id="persistence">Persistent functionality</h3>
+<p>The driver engages ExQueueWorkItem to launch a number of kernel 
+threads. Execution flow of the work items is looped to provide periodic 
+execution. The 3 work items provide periodic renaming and re-registering
+ the trojan’s driver 
+(“\registry\machine\system\currentcontrolset\services\gaopdxserv.sys”), 
+disabling of a system firewall 
+(“\registry\machine\system\currentcontrolset\services\sharedaccess\parameters\firewallpolicy\”)
+ and other functions.</p>
+<h3 id="anti-av">Blocking security solutions</h3>
+<p>The driver installs a system-wide callback for new modules loaded, 
+via PsSetLoadImageNotifyRoutine. In the hook, a check is performed 
+whether the module being loaded is listed in the ‘disallowed’ list in 
+the trojan’s configuration registry key. The driver will then prevent a 
+disallowed module from loading.</p>
+<h2 id="removal">Manual disinfection</h2>
+<p>Since antivirus vendors do not pay proper attention to the problem, 
+users have to face the difficulties of the beast elimination on their 
+own. Howewer, TDSS manual disinfection is trivial. Below is a generic 
+algorithm, which allows to completely remove any specimen of the TDSS 
+family, given (or not given) its core files names. The algo is suitable 
+for any end-user, since it is really simple and requires neither special
+ skills nor specific tools.</p>
+<ol>
+<li>Go to Device Manager and turn off and delete any unappropriate "Non PnP driver" there. <br>
+ You may look for a specific name (quadraserv.sys in my case, or 
+gaopdx*/TDSS*/clbdriver/seneka/etc .sys in case of a typical TDSS family
+ member), but the name is always subject to change, so better not rely 
+on it. <br> After this manipulation, the worm's files and registry 
+values that used to be hidden by a rootkit before, become visible, and 
+possible to be removed by hands. <br> Notice: An antirootkit can be used
+ to reliably locate the trojan’s core files. GMER or RkU make the best 
+choice; Avira Antirootkit is also coping with the task.</li>
+<li>Remove the file corresponding to the device just deleted. If there 
+is no such file, try sorting system32/drivers and system32/ files by 
+'creation date' and remove whatever looks suspicious by its name and 
+content. TDSS core files are a .sys and one or more .dll’s.</li>
+<li>Search throughout the Registry using the malicious device and files 
+name strings found on steps 1 and 2. Delete all the appropriate keys.</li>
+<li>Remove all the://autorun.inf and://RECYCLER/*.com, if any.</li>
+<li>Reboot.</li>
+<li>Launch your AV, and let it clean the rest (TMP files etc.)</li>
+</ol>
+<p>Notice: steps 1..4 are necessary to carry out by hands, without any 
+antivirus, because if an antivirus lacks a single signature for a 
+trojan’s core file, the file will not be removed and thus the malware 
+will return after reboot.</p>
+<h2 id="resume">Conclusions</h2>
+<h3>Highlights</h3>
+<ul>
+<li>TDSS’ success proves that durable bypassing of a protection is an 
+ordinarily solvable task, for which no kind of advanced invention is 
+necessary.</li>
+<li>Malware writers continue to explore the unobtrusive way of 
+protection bypassing[15], consisting in that instead of fighting a 
+problem, an attacker just extends his/her mind context so that the 
+problem was solved easily, dismissed, or turned into a helpful 
+springboard. In the case of TDSS, a skilful utilization of a 
+white-listed application to download and install malware is observed.</li>
+<li>Bundling malware together with legitimate software is a great idea 
+(though not new at all), and is also an example of unobtrusive bypassing
+ approach. The idea is that if a user is launching an application by 
+intent, s/he will most probably skip any security alerts, including 
+driver installation alerts (which are quite normal in case of a video 
+codec installation[5]) and UAC. Plus, some behavioral protections might 
+be fooled because of the visible application window.</li>
+<li>Redirecting a whole network’s DNS traffic to an attacker’s service 
+is an extremely important innovation, since it allows transparent 
+delivery of malware to clean machines, apart from serving malicious 
+redirects. In some way it’s a new kind of worm functionality.</li>
+</ul>
+<h3>Advisory</h3>
+<p>Behavior protection / HIPS developers should consider keeping an eye on the actions that allow TDSS to succeed.</p>
+<ul>
+<li>NtOpenSection, NtMakeTemporaryObject and other functions allowing tampering with system sections.</li>
+<li>Accessing a system DLL file.</li>
+<li>LoadLibraryEx with a parameter of DONT_RESOLVE_DLL_REFERENCES, which is used by dll.dll to load the original msi.dll.</li>
+<li>Tampering with system DNS and DHCP configuration.</li>
+<li>PsSetLoadImageNotifyRoutine. Though a protection may probably be turned off by the time of this API call, it may as well be not.</li>
+</ul>
+<p>Though most of these actions are not malicious by themselves, they 
+clearly pose a minor threat and thus should be considered in 
+combinations, supplied with reasonable threat weights, and within a 
+particular process execution context.</p>
+<h2 id="reference">References</h2>
+<p>[1] <a href="https://web.archive.org/web/20180130222133/http://www.google.com/search?q=tdss+%7C+tidserv+%7C+tdsserv+daterange:01012009-26042009+inurl:forum">http://www.google.com/search?q=tdss+%7C+tidserv+%7C+tdsserv+daterange:01012009-26042009+inurl:forum</a><br> [2] <a href="https://web.archive.org/web/20180130222133/http://www.kaspersky.com/viruswatchlite?search_virus=TDSS">http://www.kaspersky.com/viruswatchlite?search_virus=TDSS</a><br> [3] Dancho Danchev, <a href="https://web.archive.org/web/20180130222133/http://ddanchev.blogspot.com/2009/01/embassy-of-india-in-spain-serving.html">Embassy of India in Spain Serving Malware</a> <br> [4] Malware Analysis &amp; Diagnostic, <a href="https://web.archive.org/web/20180130222133/http://mad.internetpol.fr/archives/3-Etude-de-cas-Infection-rootkit-TDSS.html">Etude de cas - Infection rootkit TDSS</a> <br> [5] ThreatExpert, <a href="https://web.archive.org/web/20180130222133/http://www.threatexpert.com/report.aspx?md5=2c5c874235a73fc50a69780c7ad1488a">http://www.threatexpert.com/report.aspx?md5=2c5c874235a73fc50a69780c7ad1488a</a> <br> [6] ThreatExpert, <a href="https://web.archive.org/web/20180130222133/http://www.threatexpert.com/report.aspx?md5=d2ada2dba8e036d37726ebddbcc9e9d6">http://www.threatexpert.com/report.aspx?md5=d2ada2dba8e036d37726ebddbcc9e9d6</a> <br> [7] ThreatExpert, <a href="https://web.archive.org/web/20180130222133/http://www.threatexpert.com/report.aspx?md5=b17d76537ef5d94547fc4ca8851b35da">http://www.threatexpert.com/report.aspx?md5=b17d76537ef5d94547fc4ca8851b35da</a> <br> [8] F-Secure, <a href="https://web.archive.org/web/20180130222133/http://www.f-secure.com/v-descs/backdoor_w32_tdss.shtml">Backdoor:W32/TDSS Virus Description</a> <br> [9] Symantec, <a href="https://web.archive.org/web/20180130222133/http://www.symantec.com/security_response/writeup.jsp?docid=2008-091809-0911-99&amp;tabid=2">Backdoor.Tidserv Technical Details</a> <br> [10] Virustotal.com, <a href="https://web.archive.org/web/20180130222133/http://www.virustotal.com/analisis/122e4ade1c0fa88cbab02880a3b2ed98">http://www.virustotal.com/analisis/122e4ade1c0fa88cbab02880a3b2ed98</a><br> [11] Anti-malware.ru, <a href="https://web.archive.org/web/20180130222133/http://www.anti-malware.ru/node/1250">История информационной безопасности за 4-ю неделю марта от Symantec</a> <br> [12] <a href="https://web.archive.org/web/20180130222133/http://www.virustotal.com/analisis/122e4ade1c0fa88cbab02880a3b2ed98">http://www.virustotal.com/analisis/122e4ade1c0fa88cbab02880a3b2ed98</a> <br> [13] <a href="https://web.archive.org/web/20180130222133/http://www.infobyte.com.ar/down/isr-evilgrade-Readme.txt">http://www.infobyte.com.ar/down/isr-evilgrade-Readme.txt</a> <br> [14] MSDN, <a href="https://web.archive.org/web/20180130222133/http://technet.microsoft.com/en-us/library/cc962470.aspx">DhcpNameServer registry key</a> <br> [15] Virus Bulletin January 2009. Shevchenko A., <a href="https://web.archive.org/web/20180130222133/http://esagelab.ru/files/AlisaShevchenko-Jan09.pdf">Advanced malware techniques 2008</a>.</p>
+<p class="author" style="padding-left: 0px;"><br>Last updated: 17.03.2012</p>
+</div>
+  ﻿</div>
+  <div id="footer">
+    <p class="copyright">© 2009–2012 <a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/">NOBUNKUM</a> by <a href="https://web.archive.org/web/20180130222133/http://www.esagelab.ru/">Esage Lab</a> &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/ru/">/на русском языке</a> <a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/about">/about</a> <a href="https://web.archive.org/web/20180130222133/http://www.nobunkum.ru/rss">/rss</a></p>
+  </div>
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3546318-9']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://web.archive.org/web/20180130222133/https://ssl' : 'https://web.archive.org/web/20180130222133/http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+</body></html>
+<!--
+     FILE ARCHIVED ON 22:21:33 Jan 30, 2018 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 12:18:56 May 30, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.582
+  exclusion.robots: 0.164
+  exclusion.robots.policy: 0.155
+  esindex: 0.009
+  cdx.remote: 7.637
+  LoadShardBlock: 46.642 (3)
+  PetaboxLoader3.datanode: 79.893 (4)
+  load_resource: 192.003
+  PetaboxLoader3.resolve: 146.238
+-->

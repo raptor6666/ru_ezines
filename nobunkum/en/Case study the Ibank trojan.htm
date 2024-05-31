@@ -1,0 +1,609 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en"><head><script type="text/javascript" async="" src="Case%20study%20the%20Ibank%20trojan_files/ga.js"></script><script src="Case%20study%20the%20Ibank%20trojan_files/analytics.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app224.us.archive.org';v.server_ms=624;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="Case%20study%20the%20Ibank%20trojan_files/bundle-playback.js" charset="utf-8"></script>
+<script type="text/javascript" src="Case%20study%20the%20Ibank%20trojan_files/wombat.js" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="Case%20study%20the%20Ibank%20trojan_files/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.pc(0.001);
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.nobunkum.ru:80/analytics/en-banker-attacks","20170709195222","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1499629942");
+</script>
+<link rel="stylesheet" type="text/css" href="Case%20study%20the%20Ibank%20trojan_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="Case%20study%20the%20Ibank%20trojan_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Case study: the Ibank trojan</title>
+  <!-- base href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/" -->
+  <link rel="alternate" type="application/rss+xml" title="Журнал NO BUNKUM — Новости" href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/rss">
+  <link rel="stylesheet" type="text/css" href="Case%20study%20the%20Ibank%20trojan_files/style.css">
+<!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css" href="/template/css/ie.css" />
+<![endif]-->
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="/template/css/ie6.css" />
+<![endif]-->
+</head>
+<body><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr;">
+</div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20170709195222/http://www.nobunkum.ru:80/analytics/en-banker-attacks</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(725,27,25,2,"web","http://www.nobunkum.ru/analytics/en-banker-attacks","20170709195222",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=S1zqJCYt","https://web-static.archive.org/_static/css/iconochive.css?v=qtvMKcIJ"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+      <div class="subscribe">
+        
+<form action="/web/20170709195222/http://nobunkum.ru/analytics/en-banker-attacks" method="post">
+<div>
+<input class="mail" type="text" name="email" placeholder="newsletter">
+<input type="hidden" name="groups[]" value="1">
+<input class="submit" type="submit" value="OK"></div>
+</form>
+      </div>
+  <div id="header">
+    <div id="title">
+      <a id="logo" href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/"><img src="Case%20study%20the%20Ibank%20trojan_files/logo.jpg" width="374" height="51" alt="NO BUNKUM"></a>
+      <p>...on guns, germs, and steel of the digital age</p>
+    </div>
+    <div id="subtitle">
+      <ul><li class="first"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/lookout/" title="Lookout" class="issue">Lookout</a></li>
+<li class="current"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/analytics/" title="Analytics" class="issue">Analytics</a></li>
+<li><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/ru/" title="NO BUNKUM" class="issue">NO BUNKUM</a></li>
+<li class="last"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/demo/" title="Demo" class="issue">Demo</a></li>
+</ul>
+      <div class="headerlinks">
+        <a id="headerlink-about" href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/about" title="О журнале"><span>?</span></a>
+        <a id="headerlink-rss" href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/rss" title="RSS"><span>RSS</span></a>
+      </div>
+    </div>
+  </div>
+  <div id="content">
+    <div class="aside-long" style="text-align:center;padding:15px 10px">
+      <span class="tl-tag tl-tag-weight1"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=Exploit.SWF.Agent.br">Exploit.SWF.Agent.br</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight1"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=Pdfka.asd">Pdfka.asd</a></span>
+<span class="tl-tag tl-tag-weight1"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=Pidief.cvl">Pidief.cvl</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight2"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=TDSS">TDSS</a></span>
+<span class="tl-tag tl-tag-weight1"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=TDSS+removal">TDSS removal</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight1"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=binary+planting">binary planting</a></span>
+<span class="tl-tag tl-tag-weight1"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=bios+infection">bios infection</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight1"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=blind+sqli">blind sqli</a></span>
+<span class="tl-tag tl-tag-weight1"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=bootkit">bootkit</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight1"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=bootkit+remover">bootkit remover</a></span>
+<span class="tl-tag tl-tag-weight1"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=browser+exploitation">browser exploitation</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight1"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=com+hijacking">com hijacking</a></span>
+<span class="tl-tag tl-tag-weight4"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=disassembling">disassembling</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight1"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=dll+hijacking">dll hijacking</a></span>
+<span class="tl-tag tl-tag-weight2"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=drive-by+downloads">drive-by downloads</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight1"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=hack+online+banks">hack online banks</a></span>
+<span class="tl-tag tl-tag-weight1"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=heap-spray">heap-spray</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight1"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=hijack+botnet">hijack botnet</a></span>
+<span class="tl-tag tl-tag-weight1"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=ibank">ibank</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight1"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=kernel+protection">kernel protection</a></span>
+<span class="tl-tag tl-tag-weight1"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=kernel-mode+rootkit">kernel-mode rootkit</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight1"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=keylogger">keylogger</a></span>
+<span class="tl-tag tl-tag-weight5"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=malware+analysis">malware analysis</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight2"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=rootkit+detection">rootkit detection</a></span>
+<span class="tl-tag tl-tag-weight3"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=trojan">trojan</a></span>
+<span class="tl-tag tl-tag-alt tl-tag-weight1"><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/tags?tag=virus+removal">virus removal</a></span>
+    </div>
+    <!-- http://www.nobunkum.org/banker-attacks/index.html  -->
+<div style="margin-top: -10px;">
+<h1>Case study: the Ibank trojan</h1>
+<p class="author">Alisa Esage<br><span style="text-decoration: underline;"><a href="https://web.archive.org/web/20170709195222/http://twitter.com/alisaesage" target="_blank">@alisaesage</a></span></p>
+<ul class="toc">
+<li><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/analytics/en-banker-attacks#s1">Typical e-banking fraud schemes</a></li>
+<ul>
+<li><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/analytics/en-banker-attacks#s2">Stealing user credentials</a></li>
+<li><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/analytics/en-banker-attacks#s3">Attack from inside the victim</a></li>
+<li><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/analytics/en-banker-attacks#s4">Automated e-banking manipulations</a></li>
+</ul>
+<li><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/analytics/en-banker-attacks#s5">Ibank: the analysis</a></li>
+<ul>
+<li><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/analytics/en-banker-attacks#s6">General information</a></li>
+<li><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/analytics/en-banker-attacks#s7">Installation and general functionality</a></li>
+<li><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/analytics/en-banker-attacks#s8">Spying functionality</a></li>
+<li><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/analytics/en-banker-attacks#s9">Data harvesting mechanism</a></li>
+<li><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/analytics/en-banker-attacks#s10">Target systems</a></li>
+<li><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/analytics/en-banker-attacks#s11">Blocking of antiviruses</a></li>
+<li><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/analytics/en-banker-attacks#s12">Network connectivity</a></li>
+<li><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/analytics/en-banker-attacks#s13">Remote control</a></li>
+<li><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/analytics/en-banker-attacks#s14">Automated e-banking manipulations</a></li>
+</ul>
+<li><a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/analytics/en-banker-attacks#s15">Conclusions</a></li>
+</ul>
+<div class="aside">
+<h4>The article is also available in <a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/ru/banker-attacks">Russian</a></h4>
+</div>
+<p>E-banking fraud is definitely the most importand cyber threat to 
+date. While the existing banking software is completely missing the 
+point, being vulnerable by design to modern e-banking attacks, the 
+criminals’ methods and technologies continue to evolve. Given that no 
+generic solution to the problem is overseen, but a number of 
+workarounds, the threat can never be overestimated.</p>
+<p>Today’s robbery is made in virtual, essentially with the help of 
+malicious programs. Afterwards, victims usually succeed at spotting the 
+trojan which enabled the attack, but the exact technology behind the 
+attack remains obscure.</p>
+<p>The present article aims to shed some light at the technology of 
+e-banking fraud by delivering a thorough analysis of a wide-spread 
+spying trojan, targeting at a wide variety of Russian e-banking 
+technologies. As per the author’s knowledge, all the techniques 
+incorporated in the discussed trojan are up to date, top-notch, and 
+equally hazardous to all kids of e-banking solutions in or outside of 
+Russia.</p>
+<p>Important to mention, the discussed trojan is only one part of the 
+puzzle. Namely, Ibank is the instrument for only harvesting e-banking 
+credentials and performing automated money transfers, which works out on
+ majority of regularly-protected systems. Howewer, to attack systems 
+with stronger protection, an extra set of instruments is used: a custom 
+VNC technology, allowing to perform manual operations on the victim in a
+ stealthy manner, and tools to bypass enhanced security measures, such 
+as tokens and one-time passwords. Both of the latter may be plugged into
+ the well-known Zeus trojan – the “swiss army knife” of attakers’ 
+choice.</p>
+<p>Before proceeding to the Ibank analysis, let’s outline in brief the 
+general approaches to e-banking fraud, as they were discovered during 
+our investigations.</p>
+<h2 id="s1">Typical e-banking fraud schemes</h2>
+<h3 id="s2">Stealing user credentials</h3>
+<p>The classical scheme for e-banking fraud consists in stealing full 
+pack of user’s credentials which allows the attacker to control the 
+user’s bank account remotely. Depending on the e-banking architecture, 
+the credentials may include username and password, or username, password
+ and a key file or a certificate file. In case that the victim’s bank 
+performs client IP address verification, the attacker will establish a 
+proxy on the victim’s computer and connect through it to fool the 
+verification system on the server.</p>
+<p>While this scheme works only on the most weakly protected systems, by
+ no means may it be considered outdated. The Ibank trojan, which is 
+analyzed in the following section, is to the author’s best the most 
+powerful malicious instrument allowing to perform this scheme.</p>
+<h3 id="s3">Attack from inside the victim</h3>
+<p>This scheme represents a generic approach to attacking e-banking 
+systems with enhanced protection (such as unretrievable keys, 
+token-based encryption and so on). Also, this scheme is used to attack 
+lesser-known systems, since it does not demand any knowledge of the 
+target system internals from the attacker.</p>
+<p>The attack consists in connecting to the victim’s computer via a 
+custom VNC protocol, which allows the attacker to establish a visual 
+connection with an alternate desktop, invisible to user. All user’s data
+ and cookies are shared in the invisible desktop, thus allowing the 
+attacker to parasitize on the existing e-banking web session by manually
+ performing all the necessary operations. In case that the victim’s 
+computer is hidden behind the NAT or otherwise unreachable from the 
+internet, the supporting trojan can establish a back-connection to the 
+attacker.</p>
+<p>As a platform for this attack scheme, the Zeus trojan is often used, 
+for which the appropriate connection plugin is available for extra 
+payment. Zeus is preferred by fraudsters also for the reason that it 
+supports a rich choice of advanced plugins, allowing to bypass tokens, 
+one-time passwords, and perform advanced automated transactions.</p>
+<h3 id="s4">Automated e-banking manipulations</h3>
+<p>Automated e-banking manipulations, the so-called “avtozaliv” in 
+Russian cyber criminal slang, allows to automate malicious e-banking 
+transactions by means of modification of the web traffic. In general , 
+it works with any web-based e-banking solutions, as well as with 
+Win32-based solutions implemented in a thin client.</p>
+<p>The attack consists in manipulating the e-banking application on the 
+web-site level. The rules for such a manipulation may be hardcoded in 
+the trojan or set in the trojan’s configuration file. As soon the set of
+ rules for a particular e-banking application is established, the 
+attacker does not need to control the infected victims, but only to 
+collect the automated money transfers from them. All the rest is done by
+ the program.</p>
+<div class="aside">
+<p>An example of a client-side attack against <a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/demo/">online banking</a>.</p>
+</div>
+<p>There are two types of the “avtozaliv” technology: passive and 
+active. The passive technology consists in the replacement of certain 
+HTML form values or GET/POST requests, such as the destination account 
+number, or the money transfer amount. As such, the passive technology 
+allows to substitute a legitimate transaction initiated by the user, 
+with a malicious one. The active technology is more self-contained, 
+allowing to perform all the manipulations necessary to perform the 
+transfer, such as filling forms or clicking buttons. In such case, a 
+malicious transaction can be generated from scratch inside the user’s 
+computer.</p>
+<p>It should be noted that implementing the automated e-robbery 
+technology is not really complex, but rather tedious. Such a technology 
+must be custom-tailored for each separate e-banking application, and 
+requires deep study of the application’s HTML structure.</p>
+<h2 id="s5">Ibank: the analysis</h2>
+<p>Ibank is a wide-spread spying trojan, targeted at a number of Russian e-banking systems. The target systems include:</p>
+<ul>
+<li>universal e-commerce platforms, widely deployed with Russian banks to provide e-banking functionality;</li>
+<li>custom e-banking solutions of specific banks (web-based as well as standalone applications);</li>
+<li>the WebMoney system (Russian analogue of PayPal);</li>
+<li>a number of governmentally licensed cryptography solutions, which 
+provide generic encryption and key management support to e-commerce 
+platforms.</li>
+</ul>
+<p>Ibank is worthy of a detailed analysis due to following reasons:</p>
+<ul>
+<li>t is the number one bank spying trojan ever known, as per number of target systems;</li>
+<li>It is the first spying trojan targeted at Russian banks, and the only all-purpose one;</li>
+<li>Ibank is widespread, and is being actively propagated: as per 
+Kaspersky Viruswatch service, the lab adds from 5 to 20 signatures daily
+ for this trojan.</li>
+</ul>
+<p>What is even more important about the Ibank trojan, is that it has 
+been seen widely employed at targeted financial fraud attacks along with
+ the Zeus trojan. Specifically, the Ibank trojan is used to dump access 
+credentials for the target systems discovered on infected victim, while 
+the Zeus trojan represents a volatile all-purpose tool to provide 
+general data harvesting and remote control functionality on the victim.</p>
+<h3 id="s6">General information</h3>
+<p>The Ibank trojan has been discovered in 2006. Initially it was seen 
+implemented as a simple instrument to deliver mass attacks at common 
+users of e-banking systems. Howewer, the trojan quickly evolved to 
+support organized crime, and started to be seen in targeted attacks a 
+couple of years later. The massive propagation of the Ibank trojan was 
+first noted in 2010 by Dr.Web.</p>
+<p>Antiviurs vendors assign the following names to this trojan: 
+Trojan.PWS.Ibank, Backdoor.Win32.Shiz, Trojan-Spy.Win32.Shiz, 
+Backdoor.Rohimafo and others. Interestingly, no antivirus vendor has 
+ever provided a comprehensive Ibank coverage focusing on its e-banking 
+fraud functionality, which is a clear sign that antivirus vendors 
+currently underestimate the importance of protection for e-banking 
+fraud.</p>
+<p>The trojan consists of two pieces: the small loader, and the main 
+working module, which is retrieved by the loader. The loader is 
+propagated via a classical affiliate marketing scheme. Namely, the 
+initial HTTP request sent to the malicious server upon successful trojan
+ installation, contains the seller ID:</p>
+<pre class="oneliner">http://<em>servername</em>/knock.php?n=<em>botID</em>&amp;s=seller-<em>N</em></pre>
+<p>The trojan dropper is a ~100kb encrypted file (MD5: 
+53aec556c00f34182a72ba8edfb8fca9), written in C. Ibank runs completely 
+in user mode, and is rather simple from the technical point of view. 
+Howewer, some of its features betray the author’s deep knowledge of 
+e-banking systems.</p>
+<h3 id="s7">Installation and general functionality</h3>
+<p>During the installation, the trojan executable is dropped into the 
+system directory (c:\windows\system32) under random name. At the same 
+point, a number of IP addresses are blocked by the trojan by calling the
+ route command to configure an admittedly illegal gateway address for 
+each listed IP address. The list of blocked IP addresses is initially 
+hardcoded in the trojan’s code, and refer to a seemingly random list of 
+targets.</p>
+<div class="figure"><img src="Case%20study%20the%20Ibank%20trojan_files/routes.jpg" alt="Команда настройки маршрутизации и часть списка IP-адресов в теле программы" width="696" height="390">
+<p>Команда настройки маршрутизации и часть списка IP-адресов в теле программы</p>
+</div>
+<p>The trojan’s startup at boot time is provided by modification of the 
+following registry key: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows 
+NT\CurrentVersion\Winlogon\Userinit.</p>
+<p>Being executed, the trojan parasitizes on a system service, such as 
+svchost.exe, services.exe and others (which depends on the trojan’s 
+version), instead of running its own process. Apart from providing 
+general stealthiness, this approach allows the trojan to bypass firewall
+ protection due to default whitelisting of its donor process. Howewer, 
+the trojan does not try to hide other evidence of its presence in the 
+system, such as the files and the opened port.</p>
+<p>Apart from the core spying functionality, Ibank has the following features:</p>
+<ul>
+<li>A simple backdoor is available, allowing to control the infected computer through a short list of commands (see <a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/analytics/en-banker-attacks#s13">the Remote control section below</a>);</li>
+<li>A powerful mechanism to filter or modify the web traffic is 
+available, which can be used to automate money transactions via web, as 
+well as to mask the modified bank account summary (see <a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/analytics/en-banker-attacks#s14">the Automated e-banking manipulations section</a>);</li>
+<li>The victim’s routing table can be reconfigured at the command of the
+ attacker, which may be used to channel traffic for specific websites 
+through malicious gates;</li>
+<li>The trojan runs a SOCKS proxy on a random port, which may be used to
+ bypass client IP address checks during the authentication with stolen 
+credentials;</li>
+<li>A number of antiviruses is blocked: Kaspersky, Avira, AVG, and CA HIPS (see <a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/analytics/en-banker-attacks#s11">the Antivirus blocking section</a>).</li>
+</ul>
+<h3 id="s8">Spying functionality</h3>
+<p>Immediately following the installation, the trojan hooks a number of 
+APIs in order to trap target applications’ data. As soon as a target 
+application signature passes through the hook, the grabber procedure is 
+initiated to collect all the available data related to that application,
+ such as specific key files, certificates, logins and passwords, or 
+simply all of the keyboard input. The data is immediately archived and 
+sent out to the malicious server whose address is hardcoded in the 
+trojan’s code.</p>
+<p>In general, the Ibank performs the following types of grabbing activities:</p>
+<ul>
+<li>Intercepting keyboard keys in the context of: browsers, specific processes, specific windows and edit boxes;</li>
+<li>Intercepting the web traffic from browsers to grab HTTPS plaintext;</li>
+<li>Copying of key files and certificates;</li>
+<li>Exporting certificates from browsers, optionally using storage password bruteforcing;</li>
+<li>Matching HTTP requests by a pattern to extract important data, such as login, password, and session ID;</li>
+<li>Harvesting the browsing history;</li>
+<li>Retrieving the deleted and restored files (.chk).</li>
+</ul>
+<h3 id="s9">Data harvesting mechanism</h3>
+<p>In order to locate and grab the user’s data related to e-banking systems, the trojan installs the following API hooks.</p>
+<table class="text"><colgroup><col width="30%"> <col width="70%"></colgroup>
+<thead>
+<tr>
+<td>Hooked API</td>
+<td>Purpose</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CryptEncrypt</code></td>
+<td>Grabbing plaintext prior to standard encryption</td>
+</tr>
+<tr>
+<td><code>send</code>, <code>WSASend</code></td>
+<td>Grabbing login/password data from HTTP requests</td>
+</tr>
+<tr>
+<td><code>CreateFile</code></td>
+<td>Trapping user activity related to the following files: <code>self.cer</code>, <code>secrets.key</code>, and others</td>
+</tr>
+<tr>
+<td><code>GetFileAttributes</code></td>
+<td>Looking for the file signature ‘<code>iBKS</code>’ (which is the signature of a specific e-banking software key file)</td>
+</tr>
+<tr>
+<td><code>vb_pfx_import</code> (<code>sks2xyz.dll</code>)</td>
+<td>Grabbing the files <code>prv_key.pfx</code> and <code>sign.cer</code></td>
+</tr>
+<tr>
+<td><code>RCN_R50Buffer</code> (<code>FilialRCon.dll</code>)</td>
+<td>Grabbing plaintext prior to custom encryption (product-specific)</td>
+</tr>
+<tr>
+<td><code>GetWindowText</code></td>
+<td>Getting the edit box value in the window named “User registration”</td>
+</tr>
+<tr>
+<td><code>TranslateMessage</code></td>
+<td>Intercepting of keyboard keys in the context of the following modules: <code>cbsmain.dll</code>, <code>intpro.exe</code>, <code>isclient.exe</code>, <code>java.exe</code> and others</td>
+</tr>
+<tr>
+<td><code>PR_Write</code> (<code>nspr4.dll</code>)</td>
+<td>Interception of HTTPS traffic in the Mozilla browser</td>
+</tr>
+<tr>
+<td><code> (<code>opera.dll</code>)</code></td>
+<td>Interception of HTTPS traffic in the Opera browser</td>
+</tr>
+<tr>
+<td><code>Send</code>, <code>WSASend</code></td>
+<td>Saving the POST request data: name, pass, login, password</td>
+</tr>
+<tr>
+<td><code>HttpSendRequest*</code></td>
+<td>Saving the HTTP request data matched by the following pattern: <code>action=auth&amp;np=&amp;PHPSESSID=</code>, <code>IW_FormName=fmLogin&amp;IW_FormClass=TfmLog</code>, <code>CryptoPluginId=AGAVA&amp;Sign=</code></td>
+</tr>
+</tbody>
+</table>
+<p>The hooking procedures for the listed hooks provide filtering and harvesting of data and sending it to the malicious server.</p>
+<p>Note that some of the hooked functions represent custom software API (undocumented) rather then Windows API:</p>
+<ul>
+<li>Vb_pfx_import is exported from the sks2xyz.dll module, which is the 
+part of the FACTURA e-commerce solution, deployed widely at various 
+Russian banks including Sberbank;</li>
+<li>RCN_R50Buffer function is exported from the FilialRCon.dll, which is
+ the part of the custom e-banking solution deployed at Reiffeisen Bank.</li>
+</ul>
+<p>Likewise, the undocumented browser functions are hooked to intercept 
+SSL plaintext: namely, the PR_Write function of Mozilla and the unnamed 
+function of Opera.</p>
+<p>Another thing to mention from the table is the trojan’s ability to 
+intercept data from Java applications via the TranslateMessage hook.</p>
+<h3 id="s10">Target systems</h3>
+<p>For each target system located on the victim, a standalone directory is created, into which all the stolen data is dumped.</p>
+<table class="text"><colgroup><col width="60%"> <col width="40%"> </colgroup>
+<thead>
+<tr>
+<td>Data directory</td>
+<td>Target applications</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>C:\Program Files\Common Files\bssrepp</code></td>
+<td>“BS-Client”, a e-commerce platform from <a href="https://web.archive.org/web/20170709195222/http://www.bssys.com/">www.bssys.com</a></td>
+</tr>
+<tr>
+<td><code>C:\Program Files\Common Files\ibank</code></td>
+<td>“iBank”, a e-commerce platform from <a href="https://web.archive.org/web/20170709195222/http://www.bifit.com/">www.bifit.com</a></td>
+</tr>
+<tr>
+<td><code>C:\Program Files\Common Files\faktura</code></td>
+<td>“Faktura“, a e-commerce platform from <a href="https://web.archive.org/web/20170709195222/http://www.faktura.ru/">www.faktura.ru</a></td>
+</tr>
+<tr>
+<td><code>C:\Program Files\Common Files\inist</code></td>
+<td>“Inist”, a e-commerce platform from <a href="https://web.archive.org/web/20170709195222/http://www.inist.ru/">www.inist.ru</a></td>
+</tr>
+<tr>
+<td><code>C:\Program Files\Common Files\wm</code></td>
+<td>WebMoney, a web-based payment system <a href="https://web.archive.org/web/20170709195222/http://www.webmoney.ru/">www.webmoney.ru</a></td>
+</tr>
+<tr>
+<td><code>C:\Program Files\Common Files\handy</code></td>
+<td>HandyBank, a custom web-based e-banking application from <a href="https://web.archive.org/web/20170709195222/http://www.handybank.ru/">www.handybank.ru</a></td>
+</tr>
+<tr>
+<td><code>C:\Program Files\Common Files\rfk</code></td>
+<td>“RFK”, a e-commerce platform from <a href="https://web.archive.org/web/20170709195222/http://www.rfc.ru/">www.rfc.ru</a></td>
+</tr>
+<tr>
+<td><code>C:\Program Files\Common Files\sbl</code></td>
+<td>Undefined , a custom web-based e-banking Application</td>
+</tr>
+<tr>
+<td><code>C:\Program Files\Common Files\agv</code></td>
+<td>“Agava”, a cryptography framework, And “InterBank”, a e-commerce platform <a href="https://web.archive.org/web/20170709195222/http://www.alpha.ru/">www.alpha.ru</a>, <a href="https://web.archive.org/web/20170709195222/http://www.r-style.ru/">www.r-style.ru</a></td>
+</tr>
+<tr>
+<td><code>C:\Program Files\Common Files\inter</code></td>
+<td>“Inter-PRO”, a e-commerce platform from <a href="https://web.archive.org/web/20170709195222/http://www.signal-com.ru/">www.signal-com.ru</a></td>
+</tr>
+<tr>
+<td><code>C:\Program Files\Common Files\kbp</code></td>
+<td>Undefined , a custom web-based e-banking Application</td>
+</tr>
+<tr>
+<td><code>C:\Program Files\Common Files\raif</code></td>
+<td>Reiffeisen Bank custom e-banking application <a href="https://web.archive.org/web/20170709195222/http://www.raiffeisen.ru/">www.raiffeisen.ru</a></td>
+</tr>
+</tbody>
+</table>
+<p>Listed in the previous table are all the major e-commerce systems 
+available on the Russian market, and deployed by the majority of banks. 
+Thus, it is clear that the Ibank trojan allows to steal user credentials
+ from almost any Russian bank.</p>
+<p>In some cases the credentials are extracted from the underlying 
+cryptographic provider, such as ‘Agava’ software, rather than from the 
+e-banking solution.</p>
+<p>The harvested data are saved into the appropriate files and archives 
+before being sent to the malicious server: pass.log, keylog.txt, 
+ctunnel.zip, keys.zip, links.log.</p>
+<h3 id="s11">Blocking of antiviruses</h3>
+<p>Kaspersky antivirus is blocked by sending a legitimate control message to the application window:</p>
+<pre>FindWindow ("____AVP.Root");
+PostMessage (^, 466h);</pre>
+<p>Blocking of Avira is provided by calling to its own legitimate function, which is exported from one of the product DLLs:</p>
+<pre>RegQueryValue ("SOFTWARE\\Avira\\AntiVir PersonalEdition Classic", "Path");
+LoadLibrary ("avipc.dll");
+GetProcAddress ("AvIpcCall");
+GetProcAddress ("AvIpcConnect");
+AvIpcConnect ("avguard01", 1388h); 
+AvIpcCall (...); // turn off Avira</pre>
+<p>AVG is killed by simple closing the application process and dumping trash to the product’s driver file.</p>
+<pre>CreateFile ("%systemroot%\\system32\\drivers\\avgtdix.sys");
+WriteFile (^, VirtualAlloc (GetFileSize (^)));
+OpenProcess ("avgtray.exe");
+TerminateProcess (^);</pre>
+<p>Finally, CA HIPS is turned off by sending a legitimate control code to the product’s driver.</p>
+<pre>CreateFile ("\\.\KmxAgent");
+DeviceIOControl (86000054h);</pre>
+<h3 id="s12">Network connectivity</h3>
+<p>The trojan performs the following network-related activities:</p>
+<ul>
+<li>Immediately following the installation, a SOCKS server on a random port is started.</li>
+<li>Then, the trojan informs the malicious server of the victim’s summary: user name, computer name, SOCKS port number.</li>
+<li>The configuration file is then recei ed from the server (see <a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/analytics/en-banker-attacks#s13">the Remote control section</a>).</li>
+<li>After the data is harvested, it is sent to the gate.php script at the malicious server via a POST request;</li>
+<li>Upon receiving the command, the trojan may download and run a custom executable.</li>
+</ul>
+<h3 id="s13">Remote control</h3>
+<p>The infected computer is controled by commands stated in the configuration file.</p>
+<p>The following commands are available:</p>
+<table class="text"><colgroup><col width="25%"> <col width="75%"> </colgroup>
+<thead>
+<tr>
+<td>Command</td>
+<td>Objective</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>!load</code></td>
+<td>Load and run an executable from the given URL</td>
+</tr>
+<tr>
+<td><code>!route</code></td>
+<td>Configure the routing table</td>
+</tr>
+<tr>
+<td><code>!inject</code></td>
+<td>Traffic injections configuration</td>
+</tr>
+<tr>
+<td><code>!kill_os</code></td>
+<td>Killing of the infected system by writing trash to the disk’s first sectors and deleting of important system files.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="s14">Automated e-banking manipulations</h3>
+<p>As per the Ibank, the “avtozaliv” technology consists in manipulating
+ the HTML code of the banks’ websites according to the set of rules, 
+which is defined in the configuration file. Namely, the configuration 
+file contains a set of variables, which define the location and the 
+replacement data for the piece of HTML code to be modified. The name and
+ the purpose of each variable is listed in the table below.</p>
+<table class="text"><colgroup><col width="25%"> <col width="75%"> </colgroup>
+<thead>
+<tr>
+<td>Command</td>
+<td>Objective</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>set_url</code></td>
+<td>Target URL to apply the HTML modification</td>
+</tr>
+<tr>
+<td><code>data_before</code></td>
+<td>HTML mark (pattern) of the beginning of the code segment to be modified</td>
+</tr>
+<tr>
+<td><code>data_after</code></td>
+<td>HTML mark (pattern) of the tail of the code segment to be modified</td>
+</tr>
+<tr>
+<td><code>data_inject</code></td>
+<td>The replacement code</td>
+</tr>
+</tbody>
+</table>
+<p>In addition, the following options are supported:</p>
+<ul>
+<li>G or P – to modify the behavior of the set_url variable to process GET or POST requests, respectively;</li>
+<li>L – to dump the matched HTML code to log file instead of performing the replacement;</li>
+<li>D – to set replacement periodicity.</li>
+</ul>
+<p>After receiving and parcing the configuration data, the trojan saves 
+them in the HKEY_LOCAL_MACHINE\Software\Microsoft\option_9 registry key.</p>
+<h2 id="s15">Conclusions</h2>
+<ul>
+<li>The malware-based e-banking fraud techniques are currently well-developed, and the tools are readily available on black market.</li>
+<li>Existing technologies allow to perform automated or semi-automated 
+fraud on infected client, which allows to perform massive attacks.</li>
+<li>Deep understanding of e-banking system internals is not necessary to perform the targeted attack.</li>
+<li>Many of the current security enhancement measures can be successfully bypassed by attackers’ tools.</li>
+<li>Any e-banking solution is vulnerable to the attack technologies, as long as it runs on an insecure operating system.</li>
+</ul>
+<p class="author" style="padding-left: 0px;">Last updated: 17.03.2012</p>
+</div>
+  ﻿</div>
+  <div id="footer">
+    <p class="copyright">© 2009–2012 <a href="https://web.archive.org/web/20170709195222/http://www.nobunkum.ru/">NOBUNKUM</a> by <a href="https://web.archive.org/web/20170709195222/http://www.esagelab.ru/">Esage Lab</a> &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/ru/">/на русском языке</a> <a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/about">/about</a> <a href="https://web.archive.org/web/20170709195222/http://nobunkum.ru/rss">/rss</a></p>
+  </div>
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3546318-9']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://web.archive.org/web/20170709195222/https://ssl' : 'https://web.archive.org/web/20170709195222/http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+</body></html>
+<!--
+     FILE ARCHIVED ON 19:52:22 Jul 09, 2017 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 12:17:46 May 30, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.7
+  exclusion.robots: 0.212
+  exclusion.robots.policy: 0.202
+  esindex: 0.01
+  cdx.remote: 5.257
+  LoadShardBlock: 110.229 (3)
+  PetaboxLoader3.datanode: 92.851 (4)
+  PetaboxLoader3.resolve: 451.83 (2)
+  load_resource: 477.248
+-->

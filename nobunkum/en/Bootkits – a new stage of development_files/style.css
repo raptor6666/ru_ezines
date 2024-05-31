@@ -1,0 +1,343 @@
+body {
+    background: #dddddd;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, sans-serif;
+    min-width: 1070px;
+    overflow-y: scroll;
+}
+#header, #content, #footer {
+    background: white;
+    margin: 0 20% 0 0;
+    border-right: solid thin black;
+}
+#title, #subtitle, #content, #footer {
+    padding: 0 1.5em;
+}
+#title {
+    background: black;
+    color: white;
+    padding: 0.75em 2em;
+}
+#title p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 120%;
+    font-family: Georgia, serif;
+}
+#subtitle {
+    border-top: medium solid #dddddd;
+    border-bottom: thin solid #dddddd;
+}
+#subtitle ul {
+    display: inline;
+    padding: 0;
+}
+#subtitle li {
+    display: inline-block;
+    border-left: thin dashed black;
+    padding: 0.5ex 0.7ex;
+    width: 18ex;
+    margin: 0 -6px 0 0;
+}
+#subtitle li.current, #subtitle li:hover, #subtitle li:active {
+    background: #dddddd;
+}
+#subtitle .issue {
+    font-size: 120%;
+    text-decoration: none;
+    line-height: 40px;
+}
+#subtitle .issuedate {
+    font-size: small;
+}
+#subtitle .headerlinks {
+    float: right;
+    margin: 0;
+    display: inline;
+}
+#subtitle .headerlinks a {
+    display: inline-block;
+    margin: 0;
+    width: 32px;
+    height: 32px;
+    padding: 1ex;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#subtitle .headerlinks a span {
+    display: none;
+}
+#subtitle .headerlinks a:hover, #subtitle .headerlinks a:active {
+    background-color: #dddddd;
+}
+
+.subscribe {
+    position: absolute;
+    top: 101px;
+    width: 100%;
+    min-width: 1070px;
+    padding: 0;
+    height: 1px;
+}
+
+.subscribe form {
+    float: right;
+    width: 20%;
+    margin: 0;
+}
+
+.subscribe form div {
+    margin: 0 2px;
+    text-align: center;
+    border: 1px dotted #000;
+    background-color: #FFF;
+}
+
+
+.subscribe .mail {
+}
+
+.subscribe .submit {
+    padding: 0;
+    margin: 9px 1px;
+    height: 32px;
+    width: 32px;
+    border: 1px solid #CCC;
+    background-color: #EEE;
+    text-align: center;
+}
+
+#headerlink-about {
+    background-image: url(/web/20170411060841im_/http://nobunkum.ru:81/template/images/icon-about-32x32.png);
+}
+/*
+#headerlink-about:hover, #headerlink-about:active {
+    background-image: url(/web/20170411060841im_/http://nobunkum.ru:81/template/images/icon-about-active-32x32.png);
+}
+#headerlink-lj {
+    background-image: url(/web/20170411060841im_/http://nobunkum.ru:81/template/images/icon-lj-32x32.png);
+}
+#headerlink-lj:hover, #headerlink-lj:active {
+    background-image: url(/web/20170411060841im_/http://nobunkum.ru:81/template/images/icon-lj-active-32x32.png);
+}
+*/
+#headerlink-rss {
+    background-image: url(/web/20170411060841im_/http://nobunkum.ru:81/template/images/icon-rss-32x32.png);
+}
+/*
+#headerlink-rss:hover, #headerlink-rss:active {
+    background-image: url(/web/20170411060841im_/http://nobunkum.ru:81/template/images/icon-rss-active-32x32.png);
+}
+*/
+ul.toc, .toc ul {
+    list-style-type: none;
+    padding-left: 1em;
+}
+ul {
+    list-style-type: square;
+}
+#content {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+#footer {
+    padding-bottom: 2em;
+    background-color: #DDD;
+    border-top: 1px solid black;
+    border-right: 1px solid #DDD;
+}
+a, a:visited {
+    color: #002655;
+    text-decoration: underline;
+}
+a:hover, a:active {
+    color: #c70009;
+    text-decoration: underline;
+}
+a img {
+    border: none;
+}
+.aside {
+    position: absolute;
+    right: 0;
+    left: 80%;
+    padding: 0 1em;
+    font-size: small;
+}
+.aside-long {
+    float: right;
+    width: 40%;
+    margin: 1ex -25% 1ex 1em;
+    padding: 0 1em;
+    font-size: small;
+	background: white;
+    border: dotted thin black;
+}
+.author {
+    font-size: small;
+    color: #808080;
+    padding-left: 1em;
+    margin-top: 0;
+}
+.author a, .author a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+.author a:hover, .author a:active {
+    text-decoration: underline;
+}
+
+.tags {
+    font-size: 90%;
+    margin: -1.5ex 0 0 0;
+}
+.tags a {
+    color: #002655;
+    text-decoration: none;
+    margin: 0;
+}
+.tags a:hover {
+    color: #c70009;
+}
+
+h1, h2, h3, h4 {
+    font-family: Georgia, serif;
+    font-weight: bold;
+}
+h1 {
+    font-size: 150%;
+    margin-top: 0;
+    padding-top: 2ex;
+}
+h2, h3 {
+    color: #002655;
+}
+h2 {
+    font-size: 130%;
+}
+h3 {
+    font-size: 120%;
+    font-style: italic;
+}
+h4 {
+    font-weight: bold;
+    font-style: italic;
+}
+p.subh1 {
+    margin-top: -2ex;
+    font-size: small;
+}
+div.figure {
+    width: 100%;
+    text-align: center;
+}
+div.figure p {
+    margin-top: 0;
+    font-style: italic;
+}
+div.figure pre {
+    text-align: left;
+}
+pre {
+    border: none;
+    background: #dddddd;
+    padding: 1ex 1em;
+    overflow: auto;
+}
+pre, code {
+    font-family: Lucida Console, monospace;
+}
+pre.oneliner {
+    white-space: pre-wrap;
+}
+pre strong, code strong {
+    font-weight: inherit;
+    color: #c70009;
+}
+p.copyright {
+    display: inline;
+    font-size: x-small;
+    background: #dddddd;
+}
+.censored {
+    color: #c70009;
+    background: #c70009;
+}
+table {
+    width: 100%;
+    border: solid 2px black;
+    border-collapse: collapse;
+}
+col, table.text tr {
+    border: solid thin black;
+}
+tbody {
+    border: solid 2px black;
+}
+td, th {
+    padding: 0.5ex 0.5em;
+}
+td.code, th.code {
+    font-family: Lucida Console, monospace;
+}
+td.num, th.num {
+    text-align: right;
+}
+thead {
+    background: #dddddd;
+    text-align: center;
+}
+div.article {
+    margin: 0 0 2ex 22px;
+}
+div.article .author {
+    padding-left: 0;
+    margin-top: -2ex;
+}
+div.article h2 {
+    font-weight: normal;
+    font-size: large;
+}
+
+.tl-tag { margin: 0 3px; white-space: nowrap; }
+.tl-tag a { text-decoration: none; line-height: 20px;  }
+.tl-tag-weight1 { font-size: 50%; }
+.tl-tag-weight2 { font-size: 75%; }
+.tl-tag-weight3 { font-size: 100%; }
+.tl-tag-weight4 { font-size: 125%; }
+.tl-tag-weight5 { font-size: 150%; }
+
+/* Latest FIx */
+#subtitle {
+	display: none;
+}
+.aside-long {
+}
+.aside {
+	margin-top: 20px;
+}
+.subscribe {
+	display: none;
+}
+
+/*
+     FILE ARCHIVED ON 06:08:41 Apr 11, 2017 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 12:17:05 May 30, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.679
+  exclusion.robots: 0.077
+  exclusion.robots.policy: 0.064
+  esindex: 0.011
+  cdx.remote: 8.71
+  LoadShardBlock: 118.516 (3)
+  PetaboxLoader3.datanode: 141.894 (5)
+  PetaboxLoader3.resolve: 159.161 (3)
+  load_resource: 208.185 (2)
+*/
